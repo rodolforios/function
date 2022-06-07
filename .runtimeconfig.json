@@ -1,0 +1,7 @@
+{
+  "firebase": {
+    "projectId": "auth-a828a",
+    "databaseURL": "https://auth-a828a.firebaseio.com",
+    "storageBucket": "auth-a828a.appspot.com"
+  }
+}

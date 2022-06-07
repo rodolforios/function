@@ -1,0 +1,50 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "axios": "^0.27.2",
+    "express-bearer-token": "^2.4.0",
+    "firebase": "^9.8.2",
+    "firebase-admin": "^10.1.0",
+    "firebase-functions": "^3.21.2",
+    "firebase-tools": "^11.0.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "keypair": "^1.0.4",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
+    "nodemon": "^2.0.16",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "sinon": "^14.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "test": "./node_modules/.bin/nyc mocha src/**/test/*.js",
+    "watch-dev": "nodemon --exec 'touch ./index.js'",
+    "watch-test": "npm test; chokidar src/**/*.js src/**/test/*.js -i 'coverage' -c 'npm test' --silent"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 90,
+    "include": [
+      "**/*.js"
+    ],
+    "exclude": [
+      "coverage",
+      "node_modules",
+      ".nyc_output",
+      "**/test"
+    ],
+    "reporter": [
+      "html"
+    ]
+  }
+}

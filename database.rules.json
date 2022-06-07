@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "contracts": {
+      ".indexOn": [
+        "reports",
+        "contract_id",
+        "wallet/contract/gateway_integration",
+        "wallet/contract/payment_provider/rede",
+        "wallet/contract/payment_provider/cielo_tef",
+        "wallet/contract/payment_provider/pay",
+        "apps/wallet/contract/gateway_integration",
+        "apps/wallet/contract/payment_provider/rede",
+        "apps/wallet/contract/payment_provider/cielo_tef",
+        "apps/wallet/contract/payment_provider/pay"
+      ],
+      "$uid": {
+        ".read": "auth.uid != null && auth.uid == $uid",
+        "wallet": {
+          "user_defined": {
+            ".write": "auth.uid != null"
+          }
+        }
+      }
+    }
+  }
+}
